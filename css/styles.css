@@ -721,3 +721,7 @@ body{
 .agreement-check{
     outline: transparent;
 }
+
+.agreement-check:checked{
+    border-color: #404BBF;
+}
