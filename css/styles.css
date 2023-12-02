@@ -568,6 +568,16 @@ body{
     height: 100%;
     background-color: rgba(46, 47, 66, 0.40);
     z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .modal{
@@ -594,6 +604,17 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.close-button:hover,
+.close-button:focus{
+    background-color: #404BBF;
+    border: none;
+}
+
+.close-button:hover > .close-button-icon,
+.close-button:focus > .close-button-icon{
+    fill: #FFFFFF;
 }
 
 .input-label{
@@ -636,8 +657,8 @@ body{
     left: 16px;
 }
 
-.modal-input:focus + .modal-input-icon
-.modal-input:hover + .modal-input-icon{
+.modal-input:focus + .modal-input-icon,
+.modal-input:hover + .modal-input-icon {
     fill: #4D5AE5;
     
 }
@@ -672,7 +693,7 @@ body{
     color: #4D5AE5;
 }
 
-.aggreement-flex{
+.agreement-flex{
     display: flex;
     gap: 8px;
     align-items: center;
@@ -688,4 +709,8 @@ body{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     color: #FFF;
     margin: 0 auto;
+}
+
+.agreement-check{
+    outline: transparent;
 }
